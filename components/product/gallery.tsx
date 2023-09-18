@@ -1,11 +1,11 @@
 'use client';
 
-import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
-import { GridTileImage } from '../grid/tile';
-import { createUrl } from '../../lib/utils';
+// import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
+// import { GridTileImage } from '../grid/tile';
+// import { createUrl } from '../../lib/utils';
 import Image, { StaticImageData } from 'next/image';
-import Link from 'next/link';
-import { usePathname, useSearchParams } from 'next/navigation';
+// import Link from 'next/link';
+// import { usePathname, useSearchParams } from 'next/navigation';
 
 export function Gallery({ images }: { images: { src: StaticImageData; altText: string }[] }) {
   // const pathname = usePathname();
