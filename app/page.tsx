@@ -10,7 +10,7 @@ import { ProductDescription } from '../components/product/product-description';
 // import { getProduct, getProductRecommendations } from 'lib/shopify';
 // import { Image } from 'lib/shopify/types';
 // import Link from 'next/link';
-import tshirt1 from "../images/tshirt-mockup.jpg";
+import tshirt1 from "../images/front-mock.png";
 // import { StaticImageData } from 'next/image';
 
 export const runtime = 'edge';

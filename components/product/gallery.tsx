@@ -1,11 +1,22 @@
 'use client';
 
-// import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
+import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 // import { GridTileImage } from '../grid/tile';
 // import { createUrl } from '../../lib/utils';
 import Image, { StaticImageData } from 'next/image';
 // import Link from 'next/link';
 // import { usePathname, useSearchParams } from 'next/navigation';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
+import "swiper/css/navigation";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+import Link from "next/link";
+import tshirt2 from "../../images/back-mock.jpg"
+import tshirt1 from "../../images/front-mock.png"
+
+
 
 export function Gallery({ images }: { images: { src: StaticImageData; altText: string }[] }) {
   // const pathname = usePathname();
@@ -23,25 +34,70 @@ export function Gallery({ images }: { images: { src: StaticImageData; altText: s
   // previousSearchParams.set('image', previousImageIndex.toString());
   // const previousUrl = createUrl(pathname, previousSearchParams);
 
-  const buttonClassName =
-    'h-full px-6 transition-all ease-in-out hover:scale-110 hover:text-white flex items-center justify-center';
+
 
   return (
-    <>
+    <div>
       <div className="relative aspect-square h-full max-h-[500px] w-full overflow-hidden">
-        {images[0] && (
-          <Image
-            className="h-full w-full object-contain"
-            fill
-            sizes="(min-width: 1024px) 66vw, 100vw"
-            alt={images[0]?.altText as string}
-            src={images[0]?.src}
-            priority={true}
-          />
-        )}
+        {/* <Swiper
+          slidesPerView={1}
+          modules={[Autoplay, Navigation]}
+          navigation={{ nextEl: "#next-slider", prevEl: "#prev-slider" }}
+          autoplay={{
+            delay: 2000,
+          }}
+        >
+          <SwiperSlide className="">
+            <Image
+              className="h-full w-full object-contain"
+              fill
+              sizes="(min-width: 1024px) 66vw, 100vw"
+              alt={images[0]?.altText as string}
+              src={tshirt1}
+              priority={true}
+            />
+          </SwiperSlide>
+          <SwiperSlide className="">
+            <Image
+              className="h-full w-full object-contain"
+              fill
+              sizes="(min-width: 1024px) 66vw, 100vw"
+              alt={images[0]?.altText as string}
+              src={tshirt2}
+              priority={true}
+            />
+          </SwiperSlide>
+        </Swiper> */}
+        <Image
+          className="h-full w-full object-contain"
+          fill
+          sizes="(min-width: 1024px) 66vw, 100vw"
+          alt={images[0]?.altText as string}
+          src={tshirt1}
+          priority={true}
+        />
+        <div className="absolute bottom-[5%] flex w-full justify-center">
+          <div className="mx-auto flex h-11 items-center rounded-full border border-white bg-neutral-50/80 text-neutral-500 backdrop-blur dark:border-black dark:bg-neutral-900/80">
+            <button
+              id="prev-slider"
+              aria-label="Previous product image"
+              className='h-full px-6 transition-all ease-in-out hover:scale-110 hover:text-white flex items-center justify-center'
+            >
+              <ArrowLeftIcon className="h-5" />
+            </button>
+            <div className="mx-1 h-6 w-px bg-neutral-500"></div>
+            <button
+              id="next-slider"
+              aria-label="Next product image"
+              className='h-full px-6 transition-all ease-in-out hover:scale-110 hover:text-white flex items-center justify-center'
+            >
+              <ArrowRightIcon className="h-5" />
+            </button>
+          </div>
         </div>
+      </div>
 
-        {/* {images.length > 1 ? (
+      {/* {images.length > 1 ? (
           <div className="absolute bottom-[15%] flex w-full justify-center">
             <div className="mx-auto flex h-11 items-center rounded-full border border-white bg-neutral-50/80 text-neutral-500 backdrop-blur dark:border-black dark:bg-neutral-900/80">
               <Link
@@ -95,6 +151,6 @@ export function Gallery({ images }: { images: { src: StaticImageData; altText: s
           })}
         </ul>
       ) : null} */}
-    </>
+    </div>
   );
 }
