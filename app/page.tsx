@@ -45,7 +45,7 @@ export default function ProductPage() {
         ],
         priceRange: {
             maxVariantPrice: {
-                amount: 1999,
+                amount: 499,
                 currencyCode: "INR",
             },
             minVariantPrice: {
