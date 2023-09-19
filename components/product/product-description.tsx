@@ -24,7 +24,7 @@ export function ProductDescription({ product }: { product: any }) {
           html={product.descriptionHtml}
         />
       ) : null}
-      <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfX8Y61uGcg8NeFPIz6OccjEyfLzMuX0pq8BpypGOqxuwM_0g/viewform" className="mr-auto w-auto font-medium rounded-md bg-[#e62b1e] py-2 px-4 text-base text-white uppercase">
+      <Link href="https://forms.gle/NRM85YkYjDVX4UW76" className="mr-auto w-auto font-medium rounded-md bg-[#e62b1e] py-2 px-4 text-base text-white uppercase">
         Buy now
       </Link>
       {/* <AddToCart variants={product.variants} availableForSale={product.availableForSale} /> */}
