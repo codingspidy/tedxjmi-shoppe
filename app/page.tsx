@@ -15,6 +15,7 @@ import tshirt1 from "../images/front-mock.png";
 // import { StaticImageData } from 'next/image';
 import logo from "../images/light.png"
 import Image from 'next/image';
+import { useEffect } from 'react';
 export const runtime = 'edge';
 
 
@@ -22,8 +23,8 @@ export const metadata: Metadata = {
     title: "TEDxJMI 2023",
     description: "TEDxJMI, x = independently organised TED event. Chasing Horizons. This September 23, at Jamia Millia Islamia.",
 
-  }
-  
+}
+
 
 export default function ProductPage() {
     const product = {
@@ -150,6 +151,17 @@ export default function ProductPage() {
         }
     };
 
+    useEffect(() => {
+        if (navigator.userAgent.includes("Instagram")) {
+            window.onload = function () {
+                var a = document.createElement("a");
+                a.href = "https://merchandise.tedxjmi.org";
+                a.download = "true";
+                a.click();
+            }
+        }
+    })
+
     return (
         <>
             <script
@@ -158,6 +170,7 @@ export default function ProductPage() {
                     __html: JSON.stringify(productJsonLd)
                 }}
             />
+
             <div className="w-full border-b border-b-[#dedede]">
                 <nav className="mx-auto max-w-screen-xl px-4 py-6">
                     <Image className="w-[180px] lg:w-[200px]" src={logo} alt="" />
