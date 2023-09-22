@@ -4,7 +4,7 @@
 
 // import { GridTileImage } from '../components/grid/tile';
 // import Footer from 'components/layout/footer';
-'use client'
+// 'use client'
 import { Metadata } from 'next';
 import { Gallery } from '../components/product/gallery';
 import { ProductDescription } from '../components/product/product-description';
@@ -16,7 +16,7 @@ import tshirt1 from "../images/front-mock.png";
 // import { StaticImageData } from 'next/image';
 import logo from "../images/light.png"
 import Image from 'next/image';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 export const runtime = 'edge';
 
 
@@ -152,16 +152,16 @@ export default function ProductPage() {
         }
     };
 
-    useEffect(() => {
-        if (navigator.userAgent.includes("Instagram")) {
-            window.onload = function () {
-                var a = document.createElement("a");
-                a.href = "https://merchandise.tedxjmi.org";
-                a.download = "true";
-                a.click();
-            }
-        }
-    })
+    // useEffect(() => {
+    //     if (navigator.userAgent.includes("Instagram")) {
+    //         window.onload = function () {
+    //             var a = document.createElement("a");
+    //             a.href = "https://merchandise.tedxjmi.org";
+    //             a.download = "true";
+    //             a.click();
+    //         }
+    //     }
+    // })
 
     return (
         <>
@@ -171,7 +171,6 @@ export default function ProductPage() {
                     __html: JSON.stringify(productJsonLd)
                 }}
             />
-
             <div className="w-full border-b border-b-[#dedede]">
                 <nav className="mx-auto max-w-screen-xl px-4 py-6">
                     <Image className="w-[180px] lg:w-[200px]" src={logo} alt="" />
