@@ -4,6 +4,7 @@
 
 // import { GridTileImage } from '../components/grid/tile';
 // import Footer from 'components/layout/footer';
+'use client'
 import { Metadata } from 'next';
 import { Gallery } from '../components/product/gallery';
 import { ProductDescription } from '../components/product/product-description';
